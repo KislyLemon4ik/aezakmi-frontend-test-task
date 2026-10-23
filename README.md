@@ -2,6 +2,11 @@
 
 SPA на **React + TypeScript + Vite** по макету Figma: логин, таблица курсов валют с графиком динамики и форма канбан-карточки с превью.
 
+## Ссылки
+
+- **Демо:** https://aezakmigroup.vercel.app
+- **Репозиторий:** https://github.com/KislyLemon4ik/aezakmi-frontend-test-task
+
 ## Стек
 
 - React 19 + TypeScript
