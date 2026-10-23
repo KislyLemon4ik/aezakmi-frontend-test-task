@@ -5,40 +5,63 @@ import './Sidebar.css'
 type SidebarProps = {
   expanded: boolean
   onExpandChange: (expanded: boolean) => void
+  mobileOpen: boolean
+  onMobileClose: () => void
 }
 
 function canExpandByHover() {
   return window.matchMedia('(min-width: 769px)').matches
 }
 
-export function Sidebar({ expanded, onExpandChange }: SidebarProps) {
+export function Sidebar({
+  expanded,
+  onExpandChange,
+  mobileOpen,
+  onMobileClose,
+}: SidebarProps) {
   const { logout } = useAuth()
   const navigate = useNavigate()
 
   const handleLogout = () => {
     logout()
+    onMobileClose()
     navigate('/login')
   }
 
+  const handleNavClick = () => {
+    onMobileClose()
+  }
+
+  const className = [
+    'sidebar',
+    expanded ? 'sidebar--expanded' : '',
+    mobileOpen ? 'sidebar--mobile-open' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
     <aside
-      className={expanded ? 'sidebar sidebar--expanded' : 'sidebar'}
+      id="app-sidebar"
+      className={className}
       onMouseEnter={() => {
         if (canExpandByHover()) onExpandChange(true)
       }}
-      onMouseLeave={() => onExpandChange(false)}
+      onMouseLeave={() => {
+        if (canExpandByHover()) onExpandChange(false)
+      }}
     >
       <div className="sidebar__top">
         <div className="sidebar__brand">
           <span className="sidebar__brand-icon" aria-hidden="true">
             💰
           </span>
-          {expanded ? <span className="sidebar__brand-text">Dashboard</span> : null}
+          <span className="sidebar__brand-text">Dashboard</span>
         </div>
 
-        {expanded ? <div className="sidebar__divider" /> : null}
+        <div className="sidebar__divider" />
 
-        {expanded ? <p className="sidebar__menu-label">MENU</p> : null}
+        <p className="sidebar__menu-label">MENU</p>
 
         <nav className="sidebar__nav">
           <NavLink
@@ -46,12 +69,14 @@ export function Sidebar({ expanded, onExpandChange }: SidebarProps) {
             className={({ isActive }) =>
               isActive ? 'sidebar__item sidebar__item--active' : 'sidebar__item'
             }
+            onClick={handleNavClick}
           >
             <span className="sidebar__item-icon" aria-hidden="true">
               💱
             </span>
-            <span className="sidebar__item-text">
-              {expanded ? 'Exchange Rates' : 'Rates'}
+            <span className="sidebar__item-text sidebar__item-text--short">Rates</span>
+            <span className="sidebar__item-text sidebar__item-text--full">
+              Exchange Rates
             </span>
           </NavLink>
 
@@ -60,19 +85,21 @@ export function Sidebar({ expanded, onExpandChange }: SidebarProps) {
             className={({ isActive }) =>
               isActive ? 'sidebar__item sidebar__item--active' : 'sidebar__item'
             }
+            onClick={handleNavClick}
           >
             <span className="sidebar__item-icon" aria-hidden="true">
               📋
             </span>
-            <span className="sidebar__item-text">
-              {expanded ? 'Kanban Cards' : 'Cards'}
+            <span className="sidebar__item-text sidebar__item-text--short">Cards</span>
+            <span className="sidebar__item-text sidebar__item-text--full">
+              Kanban Cards
             </span>
           </NavLink>
         </nav>
       </div>
 
       <div className="sidebar__bottom">
-        {expanded ? <div className="sidebar__divider" /> : null}
+        <div className="sidebar__divider" />
 
         <button className="sidebar__logout" type="button" onClick={handleLogout}>
           <span className="sidebar__logout-icon" aria-hidden="true">

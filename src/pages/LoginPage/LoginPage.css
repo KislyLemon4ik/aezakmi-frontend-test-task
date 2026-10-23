@@ -127,3 +127,25 @@
 .login-button:hover {
   background: #161d52;
 }
+
+@media (max-width: 768px) {
+  .login-page {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 48px;
+  }
+
+  .login-card {
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .login-title {
+    font-size: 26px;
+  }
+
+  .login-subtitle {
+    margin-bottom: 22px;
+    font-size: 14px;
+  }
+}

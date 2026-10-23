@@ -155,3 +155,41 @@
     min-height: 420px;
   }
 }
+
+@media (max-width: 768px) {
+  .dynamics-panel {
+    width: 100%;
+    flex: none;
+    min-height: 0;
+    padding: 20px 16px;
+  }
+
+  .dynamics-panel__title {
+    font-size: 18px;
+  }
+
+  .dynamics-panel__value {
+    font-size: 28px;
+  }
+
+  .dynamics-panel__chart-wrap {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .dynamics-panel__chart-wrap .currency-chart {
+    height: 140px;
+  }
+
+  .dynamics-panel__periods {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .dynamics-panel__period {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+  }
+}

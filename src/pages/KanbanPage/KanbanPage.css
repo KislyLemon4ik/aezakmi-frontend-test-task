@@ -388,3 +388,42 @@
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 768px) {
+  .kanban-title {
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+
+  .kanban-card {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .kanban-form-grid {
+    gap: 16px;
+  }
+
+  .kanban-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .kanban-btn {
+    width: 100%;
+  }
+
+  .kanban-preview-title {
+    font-size: 22px;
+  }
+
+  .kanban-preview-images img {
+    width: calc(50% - 6px);
+    height: 96px;
+  }
+
+  .kanban-list-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

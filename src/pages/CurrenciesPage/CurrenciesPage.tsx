@@ -71,6 +71,7 @@ export function CurrenciesPage() {
           }
         >
           <div className="currencies-table-card">
+            <p className="currencies-scroll-hint">Swipe left to see all columns</p>
             <table className="currencies-table">
               <thead>
                 <tr>

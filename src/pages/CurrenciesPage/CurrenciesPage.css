@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.currencies-scroll-hint {
+  display: none;
+}
+
 .currencies-header {
   display: flex;
   align-items: center;
@@ -46,6 +50,8 @@
   padding: 8px 8px 4px;
   box-shadow: 0 8px 24px rgba(29, 38, 103, 0.06);
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .currencies-content--with-panel .currencies-table-card {
@@ -142,8 +148,13 @@
 }
 
 @media (max-width: 1100px) {
+  .currencies-content,
   .currencies-content--with-panel {
     flex-direction: column;
+  }
+
+  .currencies-content--with-panel .currencies-table-card {
+    flex: 1 1 auto;
   }
 }
 
@@ -151,9 +162,34 @@
   .currencies-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
   }
 
   .currencies-title {
     font-size: 24px;
+  }
+
+  .currencies-date {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .currencies-table-card {
+    padding: 4px;
+    border-radius: 14px;
+  }
+
+  .currencies-table th,
+  .currencies-table td {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .currencies-scroll-hint {
+    display: block;
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: #9aa3b8;
   }
 }

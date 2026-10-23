@@ -58,6 +58,12 @@
   white-space: nowrap;
 }
 
+.sidebar:not(.sidebar--expanded) .sidebar__brand-text,
+.sidebar:not(.sidebar--expanded) .sidebar__menu-label,
+.sidebar:not(.sidebar--expanded) .sidebar__divider {
+  display: none;
+}
+
 .sidebar__divider {
   width: 100%;
   height: 1px;
@@ -125,9 +131,22 @@
   white-space: nowrap;
 }
 
-.sidebar:not(.sidebar--expanded) .sidebar__item-text {
+.sidebar:not(.sidebar--expanded) .sidebar__item-text--full {
+  display: none;
+}
+
+.sidebar:not(.sidebar--expanded) .sidebar__item-text--short {
+  display: inline;
   font-size: 13px;
   font-weight: 600;
+}
+
+.sidebar--expanded .sidebar__item-text--short {
+  display: none;
+}
+
+.sidebar--expanded .sidebar__item-text--full {
+  display: inline;
 }
 
 .sidebar__item--active {
@@ -200,35 +219,59 @@
 }
 
 @media (max-width: 768px) {
-  .sidebar,
-  .sidebar--expanded {
-    width: 80px;
-    padding: 16px 8px;
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
+    width: min(280px, 86vw);
+    min-height: 100vh;
+    padding: 20px 16px;
+    border-right: 1px solid #e3e4ea;
+    box-shadow: 8px 0 32px rgba(29, 38, 103, 0.12);
+    transform: translateX(-105%);
+    transition: transform 0.22s ease;
+  }
+
+  .sidebar--mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar__brand {
+    justify-content: flex-start;
+    padding: 0 8px;
+    margin-bottom: 0;
   }
 
   .sidebar__brand-text,
   .sidebar__menu-label,
   .sidebar__divider {
-    display: none;
+    display: block;
   }
 
   .sidebar__item,
   .sidebar__logout {
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    padding: 8px 4px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 8px;
   }
 
-  .sidebar__item-text {
-    font-size: 13px;
+  .sidebar__item-text--short {
+    display: none;
   }
 
-  .sidebar__logout-text {
-    font-size: 11px;
+  .sidebar__item-text--full {
+    display: inline;
+    font-size: 14px;
   }
 
   .sidebar__logout {
-    color: #7a8199;
+    color: #ea3a3a;
+  }
+
+  .sidebar__logout-text {
+    font-size: 14px;
   }
 }
