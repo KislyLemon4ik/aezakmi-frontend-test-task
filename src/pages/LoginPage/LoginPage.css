@@ -1,0 +1,129 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f3f4f8;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 32px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(24, 32, 79, 0.08);
+  text-align: left;
+}
+
+.login-title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #1d2667;
+  text-align: center;
+}
+
+.login-subtitle {
+  margin: 8px 0 28px;
+  color: #7a8199;
+  font-size: 15px;
+  text-align: center;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.login-input-wrap {
+  position: relative;
+  width: 100%;
+  height: 52px;
+  border: 1px solid #d8dce8;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.login-input-wrap:focus-within {
+  border-color: #4b5fd1;
+}
+
+.login-input-wrap--error {
+  border-color: #ea3a3a;
+  background: #fff1f1;
+}
+
+.login-input-wrap--error .login-icon {
+  color: #ea3a3a;
+}
+
+.login-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  font-family: Inter, system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #9aa3b8;
+  pointer-events: none;
+}
+
+.login-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 14px 0 42px;
+  border: 0;
+  border-radius: 12px;
+  outline: none;
+  font: inherit;
+  color: #1d2667;
+  background: transparent;
+}
+
+.login-input::placeholder {
+  color: #9aa3b8;
+}
+
+.login-input:-webkit-autofill,
+.login-input:-webkit-autofill:hover,
+.login-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1d2667;
+  box-shadow: 0 0 0 1000px #e8f0fe inset;
+  transition: background-color 9999s ease-out;
+}
+
+.login-error {
+  font-size: 13px;
+  color: #ea3a3a;
+}
+
+.login-button {
+  width: 100%;
+  height: 48px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: #1d2667;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(29, 38, 103, 0.25);
+}
+
+.login-button:hover {
+  background: #161d52;
+}

@@ -1,0 +1,234 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80px;
+  min-height: 100vh;
+  padding: 20px 10px;
+  background: #ffffff;
+  border-right: 1px solid #e3e4ea;
+  transition: width 0.2s ease;
+  z-index: 20;
+}
+
+.sidebar--expanded {
+  width: 200px;
+  padding: 20px 16px;
+}
+
+.sidebar__top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 8px;
+}
+
+.sidebar:not(.sidebar--expanded) .sidebar__brand {
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.sidebar__brand-icon {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.sidebar__brand-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: #1d2667;
+  white-space: nowrap;
+}
+
+.sidebar__divider {
+  width: 100%;
+  height: 1px;
+  background: #e3e4ea;
+}
+
+.sidebar__menu-label {
+  margin: 4px 0 0;
+  padding: 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #9aa3b8;
+  font-weight: 600;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar:not(.sidebar--expanded) .sidebar__nav {
+  margin-top: 4px;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1d2667;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar__item:hover {
+  background: #e8efff;
+}
+
+.sidebar:not(.sidebar--expanded) .sidebar__item {
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 4px;
+}
+
+.sidebar__item-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 22px;
+  line-height: 27px;
+  color: #000000;
+}
+
+.sidebar__item-text {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sidebar:not(.sidebar--expanded) .sidebar__item-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar__item--active {
+  background: #e8efff;
+  color: #2f6bfe;
+}
+
+.sidebar__item--active .sidebar__item-text {
+  color: #2f6bfe;
+}
+
+.sidebar__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar__logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  color: #7a8199;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar__logout:hover {
+  background: #ffe8e8;
+  color: #ea3a3a;
+}
+
+.sidebar--expanded .sidebar__logout {
+  color: #ea3a3a;
+}
+
+.sidebar:not(.sidebar--expanded) .sidebar__logout {
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px;
+}
+
+.sidebar__logout-icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.sidebar__logout-text {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sidebar:not(.sidebar--expanded) .sidebar__logout-text {
+  font-size: 11px;
+}
+
+@media (max-width: 768px) {
+  .sidebar,
+  .sidebar--expanded {
+    width: 80px;
+    padding: 16px 8px;
+  }
+
+  .sidebar__brand-text,
+  .sidebar__menu-label,
+  .sidebar__divider {
+    display: none;
+  }
+
+  .sidebar__item,
+  .sidebar__logout {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 4px;
+  }
+
+  .sidebar__item-text {
+    font-size: 13px;
+  }
+
+  .sidebar__logout-text {
+    font-size: 11px;
+  }
+
+  .sidebar__logout {
+    color: #7a8199;
+  }
+}

@@ -1,0 +1,157 @@
+.dynamics-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  flex: 0 0 540px;
+  min-height: calc(100vh - 160px);
+  padding: 28px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(29, 38, 103, 0.06);
+}
+
+.dynamics-panel__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #9aa3b8;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dynamics-panel__close-icon {
+  display: block;
+  flex: none;
+}
+
+.dynamics-panel__close:hover {
+  background: #f3f4f8;
+  color: #1d2667;
+}
+
+.dynamics-panel__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.dynamics-panel__flag {
+  display: block;
+  border-radius: 2px;
+}
+
+.dynamics-panel__title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1d2667;
+}
+
+.dynamics-panel__subtitle {
+  margin: 0 0 18px;
+  color: #9aa3b8;
+  font-size: 14px;
+}
+
+.dynamics-panel__value-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.dynamics-panel__value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1d2667;
+  line-height: 1;
+}
+
+.dynamics-panel__change {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dynamics-panel__change--up {
+  background: #e8f8ee;
+  color: #1f9d4d;
+}
+
+.dynamics-panel__change--down {
+  background: #ffe8e8;
+  color: #ea3a3a;
+}
+
+.dynamics-panel__chart-wrap {
+  flex: none;
+  width: 92%;
+  margin: 0 0 22px;
+  padding: 8px 0;
+  border-radius: 14px;
+  background: #f3fbf6;
+  overflow: hidden;
+}
+
+.dynamics-panel__chart-wrap .currency-chart {
+  display: block;
+  width: 100%;
+  height: 170px;
+}
+
+.dynamics-panel__periods {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 14px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.dynamics-panel__period {
+  flex: none;
+  width: 48px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: #f3f4f8;
+  color: #5b647b;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dynamics-panel__period--active {
+  background: #1d2667;
+  color: #ffffff;
+}
+
+.dynamics-panel__state {
+  padding: 28px 0;
+  color: #7a8199;
+}
+
+.dynamics-panel__state--error {
+  color: #ea3a3a;
+}
+
+@media (max-width: 1200px) {
+  .dynamics-panel {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 420px;
+  }
+}
